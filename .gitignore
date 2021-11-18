@@ -1,0 +1,17 @@
+venv
+
+local_settings.py
+prode_settings.py
+
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+__pycache__/
+*/__pycache__/
+
+*.py[cod]
+.pyc
+*.pyc
+!media
+media/*
+log/debug.log

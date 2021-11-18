@@ -1,0 +1,73 @@
+{% extends 'books/base.html' %}
+{% load static %}
+<title>{% block title %}{{ publishing.name}}{% endblock title %}</title>
+{% block container %}
+            <div class="container py-md-4">
+
+{% endblock container %}
+{% block sidebar %}
+            <div class="side-bar col-lg-3">
+
+{% endblock sidebar %}
+
+
+
+{% block book %}
+
+<div class="left-ads-display col-lg-8">
+                    <div class="row">
+                        <div class="desc1-left col-md-6">
+                            <img src="{{ publishing.image.url }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="desc1-right col-md-6 pl-lg-4">
+                            <h3 class="editContent" style="outline: none; cursor: inherit;">
+                                {{ book.title }}
+                               </h3>
+                            <h5 class="editContent"></h5>
+                            <ul>
+
+
+
+                                <li style="list-style: none">
+                                    <span><b>Книги издательства:</b>
+                                    <br>
+                                        {% for book in publishing.book_publishing.all %}
+
+                                        {{ book.title }}
+                                            ,
+                                        {% endfor %}
+                                    </span>
+{#                                 <span><b>Издательство:</b>#}
+{#                                        {% for publishings in book.publishings.all %}#}
+{#                                        {{ publishings.name }}#}
+{#                                        {% endfor %}#}
+{#                                    </span>#}
+                                </li>
+
+
+{#                                 <span><b>Автор:</b>#}
+{#                                        {% for avtors in book.avtors.all %}#}
+{#                                    {{ avtors.name }}#}
+{#                                        {% endfor %}#}
+{#                                </span>#}
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row sub-para-w3layouts mt-5">
+
+                        <h3 class="shop-sing editContent" style="outline: none; cursor: inherit;">
+                            О {{ publishing.name }}</h3>
+
+                        <p class="editContent" style="outline: none; cursor: inherit;">
+                            {{ publishing.description|safe }}
+                        </p>
+                    </div>
+                </div>
+
+
+
+{% endblock book %}
